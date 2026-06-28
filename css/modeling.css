@@ -4,17 +4,9 @@
 
 .modeling-hero{
 
-    position:relative;
-
     min-height:100vh;
 
-    display:flex;
-
-    align-items:center;
-
-    background:url("../images/Modeling.jpg") center center/cover no-repeat;
-
-    overflow:hidden;
+    padding-top:40px;
 
 }
 
@@ -54,7 +46,7 @@
 
     max-width:650px;
 
-    color:#ffffff;
+    color:#161247;
 
 }
 
@@ -66,7 +58,7 @@
 
     display:inline-block;
 
-    color:#ffffff;
+    color:#727a81;
 
     letter-spacing:3px;
 
@@ -88,7 +80,7 @@
 
     margin-bottom:30px;
 
-    color:#ffffff;
+    color:#f5f6f7;
 
 }
 
@@ -119,8 +111,8 @@
 }
 
 .modeling-hero .primary-btn{
-
-    background:#ffffff;
+    border:2px solid #ffffff;
+    background:#75767a;
 
     color:#111111;
 
@@ -128,23 +120,23 @@
 
 .modeling-hero .primary-btn:hover{
 
-    background:#0066ff;
+    background:#1054d1;
 
-    color:#ffffff;
+    color:#0c0b0b;
 
 }
 
 .modeling-hero .secondary-btn{
 
     border:2px solid #ffffff;
-
-    color:#ffffff;
+    background:#75767a;
+  color:#050505;
 
 }
 
 .modeling-hero .secondary-btn:hover{
 
-    background:#ffffff;
+    background:#1054d1;
 
     color:#111111;
 
@@ -154,33 +146,25 @@
    WHITE NAVIGATION
 ========================================== */
 
-.modeling-page .header{
-
-    background:transparent;
-
-    box-shadow:none;
-
-}
-
 .modeling-page .logo,
-
 .modeling-page .nav-links a{
 
-    color:#ffffff;
+    color:var(--primary);
 
 }
 
 .modeling-page .nav-links a.active{
 
-    color:#ffffff;
+    color:var(--accent);
 
 }
 
 .modeling-page .nav-links a::after{
 
-    background:#ffffff;
+    background:var(--gradient);
 
 }
+
 
 /* ==========================================
    MOBILE

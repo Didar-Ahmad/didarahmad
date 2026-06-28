@@ -1,171 +1,136 @@
-/* ===========================
-   TABLET
-=========================== */
-
-@media(max-width:992px){
-
-.hero-content{
-
-    flex-direction:column-reverse;
-
-    text-align:center;
-
-}
-
-.hero-text{
-
-    width:100%;
-
-}
-
-.hero p{
-
-    max-width:100%;
-
-}
-
-.hero-buttons{
-
-    justify-content:center;
-
-}
-
-.hero-image img{
-
-    width:340px;
-
-}
-
-.service-grid{
-
-    grid-template-columns:1fr;
-
-}
-
-}
-
-/* ===========================
-   MOBILE
-=========================== */
-
-@media(max-width:768px){
-
-.navbar{
-
-    flex-direction:column;
-
-    height:auto;
-
-    padding:20px 0;
-
-}
-
-.nav-links{
-
-    flex-direction:column;
-
-    gap:15px;
-
-    margin-top:20px;
-
-}
-
-.hero{
-
-    padding-top:150px;
-
-}
-
-.hero h1{
-
-    font-size:42px;
-
-}
-
-.hero h2{
-
-    font-size:22px;
-
-}
-
-.hero p{
-
-    font-size:17px;
-
-}
-
-.hero-buttons{
-
-    flex-direction:column;
-
-    align-items:center;
-
-}
-
-.hero-image img{
-
-    width:280px;
-
-}
-
-section{
-
-    padding:70px 0;
-
-}
-
-.about h2,
-.services h2,
-.contact h2{
-
-    font-size:34px;
-
-}
-
-}
 /* ==========================================
-   MOBILE NAVIGATION
+   LAPTOP
+========================================== */
+
+@media (max-width:1200px){
+
+    .container{
+
+        width:92%;
+
+    }
+
+    .hero h1{
+
+        font-size:60px;
+
+    }
+
+    .hero h2{
+
+        font-size:26px;
+
+    }
+
+    .hero-image img{
+
+        width:380px;
+
+    }
+
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width:992px){
+
+    .hero-content{
+
+        flex-direction:column-reverse;
+
+        text-align:center;
+
+        gap:50px;
+
+    }
+
+    .hero-text{
+
+        width:100%;
+
+    }
+
+    .hero p{
+
+        max-width:100%;
+
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+
+    }
+
+    .hero-image img{
+
+        width:330px;
+
+    }
+
+    .service-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .about h2{
+
+        font-size:40px;
+
+    }
+
+}
+
+/* ==========================================
+   MOBILE
 ========================================== */
 
 @media (max-width:768px){
+
+    /* Navbar */
+
+    .navbar{
+
+        height:70px;
+
+        padding:0 20px;
+
+    }
 
     .menu-toggle{
 
         display:block;
 
-        font-size:32px;
-
-        background:none;
-
-        border:none;
-
-        cursor:pointer;
-
-        color:#111;
+        z-index:1001;
 
     }
 
     .nav-links{
 
-        display:none;
-
         position:absolute;
 
-        top:80px;
+        top:90px;
 
-        left:0;
+        left:5%;
 
-        width:100%;
+        width:90%;
 
-        background:#fff;
+        background:#ffffff;
+
+        border-radius:18px;
+
+        box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+        display:none;
 
         flex-direction:column;
 
-        text-align:center;
+        padding:25px 0;
 
-        padding:20px 0;
-
-        box-shadow:0 10px 25px rgba(0,0,0,.08);
+        gap:20px;
 
     }
 
@@ -175,9 +140,127 @@ section{
 
     }
 
-    .nav-links li{
+    /* Hero */
 
-        margin:15px 0;
+    .hero{
+
+        padding:140px 0 80px;
+
+    }
+
+    .hero h1{
+
+        font-size:42px;
+
+    }
+
+    .hero h2{
+
+        font-size:22px;
+
+    }
+
+    .hero p{
+
+        font-size:17px;
+
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+        align-items:center;
+
+        width:100%;
+
+    }
+
+    .primary-btn,
+
+    .secondary-btn{
+
+        width:240px;
+
+        justify-content:center;
+
+    }
+
+    .hero-image img{
+
+        width:260px;
+
+    }
+
+    /* Services */
+
+    .service-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    /* About */
+
+    .about h2{
+
+        font-size:34px;
+
+    }
+
+    /* Section */
+
+    section{
+
+        padding:80px 0;
+
+    }
+
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width:480px){
+
+    .logo{
+
+        font-size:24px;
+
+    }
+
+    .hero h1{
+
+        font-size:34px;
+
+    }
+
+    .hero h2{
+
+        font-size:19px;
+
+    }
+
+    .hero p{
+
+        font-size:16px;
+
+    }
+
+    .hero-image img{
+
+        width:220px;
+
+    }
+
+    .services h2,
+
+    .about h2,
+
+    .contact h2{
+
+        font-size:30px;
 
     }
 

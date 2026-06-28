@@ -1,31 +1,35 @@
-/* ===========================
+/* ==========================================
    HEADER
-=========================== */
+========================================== */
 
 .header{
 
     position:fixed;
 
-    top:0;
+    top:20px;
+
     left:0;
 
     width:100%;
-
-    background:#ffffff;
-
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
 
     z-index:1000;
 
 }
 
-/* ===========================
+/* ==========================================
    NAVBAR
-=========================== */
-
+========================================== */
 .navbar{
 
+    width:95%;
+
+    max-width:1350px;
+
+    margin:auto;
+
     height:80px;
+
+    padding:0 35px;
 
     display:flex;
 
@@ -33,25 +37,45 @@
 
     align-items:center;
 
+    gap:50px;
+
+    background:rgba(211, 229, 248, 0.92);
+
+    backdrop-filter:blur(20px);
+
+    -webkit-backdrop-filter:blur(20px);
+
+    border:1px solid rgba(148,163,184,.18);
+
+    border-radius:20px;
+
+    box-shadow:
+        0 10px 30px rgba(15,23,42,.08),
+        0 1px 0 rgba(255,255,255,.6);
+
 }
 
-/* ===========================
+/* ==========================================
    LOGO
-=========================== */
+========================================== */
 
 .logo{
 
-    font-size:30px;
+    font-size:20px;
 
-    font-weight:700;
+    font-weight:800;
 
     color:var(--primary);
 
+    white-space:nowrap;
+
+    flex-shrink:0;
+
 }
 
-/* ===========================
-   NAVIGATION LINKS
-=========================== */
+/* ==========================================
+   NAVIGATION
+========================================== */
 
 .nav-links{
 
@@ -59,23 +83,25 @@
 
     align-items:center;
 
-    gap:35px;
+    gap:40px;
 
 }
 
 .nav-links a{
 
-    color:var(--primary);
+    position:relative;
+
+    font-size:16px;
 
     font-weight:500;
 
-    transition:.3s;
+    color:var(--secondary);
 
-    position:relative;
+    transition:.35s;
 
 }
 
-/* Hover Effect */
+/* Hover */
 
 .nav-links a:hover{
 
@@ -83,15 +109,17 @@
 
 }
 
-/* Active Page */
+/* Active */
 
 .nav-links a.active{
 
     color:var(--accent);
 
+    font-weight:600;
+
 }
 
-/* Underline Animation */
+/* Underline */
 
 .nav-links a::after{
 
@@ -101,15 +129,17 @@
 
     left:0;
 
-    bottom:-6px;
+    bottom:-8px;
 
     width:0;
 
-    height:2px;
+    height:3px;
 
-    background:var(--accent);
+    border-radius:20px;
 
-    transition:.3s;
+    background:var(--gradient);
+
+    transition:.35s;
 
 }
 
@@ -121,20 +151,22 @@
 
 }
 
-/* ===========================
-   MOBILE MENU BUTTON
-=========================== */
+/* ==========================================
+   MOBILE BUTTON
+========================================== */
 
 .menu-toggle{
 
     display:none;
 
+    background:none;
+
     border:none;
 
-    background:none;
+    cursor:pointer;
 
     font-size:30px;
 
-    cursor:pointer;
+    color:var(--primary);
 
 }

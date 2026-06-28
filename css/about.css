@@ -1,41 +1,83 @@
-/* ===========================
+/* ==========================================
    ABOUT SECTION
-=========================== */
+========================================== */
 
 .about{
 
-    background:#ffffff;
+    background:var(--background);
 
 }
 
+/* Container */
+
 .about .container{
 
-    max-width:900px;
+    max-width:1000px;
+
+    margin:auto;
 
     text-align:center;
 
 }
 
-.about h2{
+/* Small Title */
 
-    font-size:42px;
+.about span{
 
-    margin-bottom:25px;
+    display:inline-block;
 
-    color:var(--primary);
+    color:var(--accent);
+
+    font-size:14px;
+
+    font-weight:700;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    margin-bottom:15px;
 
 }
 
+/* Heading */
+
+.about h2{
+
+    font-size:48px;
+
+    font-weight:800;
+
+    color:var(--primary);
+
+    margin-bottom:30px;
+
+}
+
+/* Paragraph */
+
 .about p{
+
+    max-width:850px;
+
+    margin:auto;
+
+    margin-bottom:20px;
 
     font-size:18px;
 
-    color:var(--secondary);
-
     line-height:1.9;
 
-    max-width:800px;
+    color:var(--secondary);
 
-    margin:auto;
+}
+
+/* Button */
+
+.about .btn{
+
+    display:inline-block;
+
+    margin-top:35px;
 
 }
