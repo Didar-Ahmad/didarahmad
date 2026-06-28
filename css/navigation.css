@@ -1,43 +1,140 @@
+/* ===========================
+   HEADER
+=========================== */
+
 .header{
+
     position:fixed;
+
     top:0;
     left:0;
+
     width:100%;
-    background:#fff;
-    box-shadow:var(--shadow);
+
+    background:#ffffff;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
     z-index:1000;
+
 }
+
+/* ===========================
+   NAVBAR
+=========================== */
 
 .navbar{
-    max-width:1200px;
-    margin:auto;
+
+    height:80px;
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
-    padding:20px 40px;
+
 }
 
-.logo a{
+/* ===========================
+   LOGO
+=========================== */
+
+.logo{
+
     font-size:30px;
+
     font-weight:700;
+
+    color:var(--primary);
+
 }
+
+/* ===========================
+   NAVIGATION LINKS
+=========================== */
 
 .nav-links{
+
     display:flex;
+
+    align-items:center;
+
     gap:35px;
+
 }
 
 .nav-links a{
+
+    color:var(--primary);
+
     font-weight:500;
+
     transition:.3s;
+
+    position:relative;
+
 }
+
+/* Hover Effect */
 
 .nav-links a:hover{
+
     color:var(--accent);
+
 }
 
+/* Active Page */
+
+.nav-links a.active{
+
+    color:var(--accent);
+
+}
+
+/* Underline Animation */
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-6px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--accent);
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover::after,
+
+.nav-links a.active::after{
+
+    width:100%;
+
+}
+
+/* ===========================
+   MOBILE MENU BUTTON
+=========================== */
+
 .menu-toggle{
+
     display:none;
-    font-size:32px;
+
+    border:none;
+
+    background:none;
+
+    font-size:30px;
+
     cursor:pointer;
+
 }

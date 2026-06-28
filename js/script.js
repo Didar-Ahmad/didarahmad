@@ -1,8 +1,21 @@
-const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
+/* ==========================================
+   DIDARAHMAD.COM
+   Version 1.0
+========================================== */
 
-menuToggle.addEventListener("click", () => {
+document.addEventListener("DOMContentLoaded", () => {
 
-    navLinks.classList.toggle("active");
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    if (menuToggle && navLinks) {
+
+        menuToggle.addEventListener("click", () => {
+
+            navLinks.classList.toggle("active");
+
+        });
+
+    }
 
 });

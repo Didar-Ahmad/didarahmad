@@ -1,47 +1,166 @@
 @import url("navigation.css");
 @import url("hero.css");
+@import url("about.css");
 @import url("services.css");
+@import url("contact.css");
 @import url("footer.css");
 @import url("responsive.css");
 
+/* ===========================
+   GOOGLE FONT
+=========================== */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
+/* ===========================
+   VARIABLES
+=========================== */
+
 :root{
+
     --primary:#111111;
-    --secondary:#555555;
+    --secondary:#666666;
     --accent:#0066ff;
-    --background:#ffffff;
+    --white:#ffffff;
     --light:#f8f9fa;
+
     --shadow:0 10px 30px rgba(0,0,0,.08);
+
 }
 
+/* ===========================
+   RESET
+=========================== */
+
 *{
+
     margin:0;
     padding:0;
     box-sizing:border-box;
+
 }
 
 html{
+
     scroll-behavior:smooth;
+
 }
 
 body{
+
     font-family:'Poppins',sans-serif;
-    background:var(--background);
+
+    background:var(--white);
+
     color:var(--primary);
-    line-height:1.6;
+
+    line-height:1.7;
+
 }
 
 img{
+
     max-width:100%;
     display:block;
+
 }
 
 a{
+
     text-decoration:none;
+
     color:inherit;
+
 }
 
 ul{
+
     list-style:none;
+
+}
+
+/* ===========================
+   CONTAINER
+=========================== */
+
+.container{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.btn{
+
+    display:inline-block;
+
+    padding:15px 35px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.primary-btn{
+
+    background:var(--primary);
+
+    color:var(--white);
+
+}
+
+.primary-btn:hover{
+
+    background:var(--accent);
+
+}
+
+.secondary-btn{
+
+    border:2px solid var(--primary);
+
+    color:var(--primary);
+
+}
+
+.secondary-btn:hover{
+
+    background:var(--primary);
+
+    color:var(--white);
+
+}
+
+/* ===========================
+   SECTION TITLE
+=========================== */
+
+section{
+
+    padding:100px 0;
+
+}
+
+section h2{
+
+    font-size:40px;
+
+    margin-bottom:20px;
+
+}
+
+section p{
+
+    color:var(--secondary);
+
 }

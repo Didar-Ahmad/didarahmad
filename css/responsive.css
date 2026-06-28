@@ -1,71 +1,184 @@
-@media (max-width:991px){
+/* ===========================
+   TABLET
+=========================== */
+
+@media(max-width:992px){
 
 .hero-content{
+
     flex-direction:column-reverse;
+
     text-align:center;
-    gap:40px;
+
 }
 
-.hero h1{
-    font-size:52px;
-}
+.hero-text{
 
-.hero h2{
-    font-size:24px;
+    width:100%;
+
 }
 
 .hero p{
-    margin:auto;
+
+    max-width:100%;
+
 }
 
 .hero-buttons{
+
     justify-content:center;
+
 }
 
 .hero-image img{
+
     width:340px;
+
+}
+
+.service-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:768px){
+
+.navbar{
+
+    flex-direction:column;
+
+    height:auto;
+
+    padding:20px 0;
+
 }
 
 .nav-links{
-    display:none;
-}
 
-.menu-toggle{
-    display:block;
-}
+    flex-direction:column;
+
+    gap:15px;
+
+    margin-top:20px;
 
 }
-
-@media (max-width:600px){
 
 .hero{
-    padding-top:120px;
+
+    padding-top:150px;
+
 }
 
 .hero h1{
+
     font-size:42px;
+
 }
 
 .hero h2{
-    font-size:20px;
+
+    font-size:22px;
+
 }
 
 .hero p{
-    font-size:17px;
-}
 
-.hero-image img{
-    width:280px;
+    font-size:17px;
+
 }
 
 .hero-buttons{
+
     flex-direction:column;
+
+    align-items:center;
+
 }
 
-.primary-btn,
-.secondary-btn{
-    width:100%;
-    text-align:center;
+.hero-image img{
+
+    width:280px;
+
 }
+
+section{
+
+    padding:70px 0;
+
+}
+
+.about h2,
+.services h2,
+.contact h2{
+
+    font-size:34px;
+
+}
+
+}
+/* ==========================================
+   MOBILE NAVIGATION
+========================================== */
+
+@media (max-width:768px){
+
+    .menu-toggle{
+
+        display:block;
+
+        font-size:32px;
+
+        background:none;
+
+        border:none;
+
+        cursor:pointer;
+
+        color:#111;
+
+    }
+
+    .nav-links{
+
+        display:none;
+
+        position:absolute;
+
+        top:80px;
+
+        left:0;
+
+        width:100%;
+
+        background:#fff;
+
+        flex-direction:column;
+
+        text-align:center;
+
+        padding:20px 0;
+
+        box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    }
+
+    .nav-links.active{
+
+        display:flex;
+
+    }
+
+    .nav-links li{
+
+        margin:15px 0;
+
+    }
 
 }

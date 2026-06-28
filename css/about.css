@@ -1,75 +1,41 @@
+/* ===========================
+   ABOUT SECTION
+=========================== */
+
 .about{
 
-padding:120px 40px;
-
-background:white;
+    background:#ffffff;
 
 }
 
-.about-container{
+.about .container{
 
-max-width:1200px;
+    max-width:900px;
 
-margin:auto;
-
-display:flex;
-
-align-items:center;
-
-gap:80px;
+    text-align:center;
 
 }
 
-.about-image{
+.about h2{
 
-flex:1;
+    font-size:42px;
 
-}
+    margin-bottom:25px;
 
-.about-image img{
-
-width:420px;
-
-border-radius:25px;
-
-box-shadow:0 25px 60px rgba(0,0,0,.15);
+    color:var(--primary);
 
 }
 
-.about-text{
+.about p{
 
-flex:1;
+    font-size:18px;
 
-}
+    color:var(--secondary);
 
-.about-text span{
+    line-height:1.9;
 
-color:#0066ff;
+    max-width:800px;
 
-font-weight:600;
-
-letter-spacing:2px;
-
-}
-
-.about-text h2{
-
-font-size:46px;
-
-margin:20px 0;
-
-line-height:1.3;
-
-}
-
-.about-text p{
-
-margin-bottom:25px;
-
-color:#555;
-
-font-size:18px;
-
-line-height:1.8;
+    margin:auto;
 
 }

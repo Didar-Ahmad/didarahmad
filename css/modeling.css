@@ -1,0 +1,239 @@
+/* ==========================================
+   MODELING PAGE
+========================================== */
+
+.modeling-hero{
+
+    position:relative;
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    background:url("../images/Modeling.jpg") center center/cover no-repeat;
+
+    overflow:hidden;
+
+}
+
+/* ==========================================
+   DARK OVERLAY
+========================================== */
+
+.modeling-hero .overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+}
+
+/* ==========================================
+   HERO CONTENT
+========================================== */
+
+.modeling-hero .hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.modeling-hero .hero-text{
+
+    max-width:650px;
+
+    color:#ffffff;
+
+}
+
+/* ==========================================
+   TEXT
+========================================== */
+
+.modeling-hero .subtitle{
+
+    display:inline-block;
+
+    color:#ffffff;
+
+    letter-spacing:3px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    margin-bottom:20px;
+
+}
+
+.modeling-hero h1{
+
+    font-size:80px;
+
+    line-height:1.05;
+
+    font-weight:800;
+
+    margin-bottom:30px;
+
+    color:#ffffff;
+
+}
+
+.modeling-hero p{
+
+    font-size:22px;
+
+    line-height:1.8;
+
+    max-width:600px;
+
+    color:rgba(255,255,255,.92);
+
+    margin-bottom:45px;
+
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.modeling-hero .hero-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+.modeling-hero .primary-btn{
+
+    background:#ffffff;
+
+    color:#111111;
+
+}
+
+.modeling-hero .primary-btn:hover{
+
+    background:#0066ff;
+
+    color:#ffffff;
+
+}
+
+.modeling-hero .secondary-btn{
+
+    border:2px solid #ffffff;
+
+    color:#ffffff;
+
+}
+
+.modeling-hero .secondary-btn:hover{
+
+    background:#ffffff;
+
+    color:#111111;
+
+}
+
+/* ==========================================
+   WHITE NAVIGATION
+========================================== */
+
+.modeling-page .header{
+
+    background:transparent;
+
+    box-shadow:none;
+
+}
+
+.modeling-page .logo,
+
+.modeling-page .nav-links a{
+
+    color:#ffffff;
+
+}
+
+.modeling-page .nav-links a.active{
+
+    color:#ffffff;
+
+}
+
+.modeling-page .nav-links a::after{
+
+    background:#ffffff;
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:992px){
+
+.modeling-hero h1{
+
+    font-size:60px;
+
+}
+
+.modeling-hero p{
+
+    font-size:18px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.modeling-hero{
+
+    text-align:center;
+
+}
+
+.modeling-hero .hero-content{
+
+    justify-content:center;
+
+}
+
+.modeling-hero h1{
+
+    font-size:44px;
+
+}
+
+.modeling-hero p{
+
+    font-size:17px;
+
+}
+
+.modeling-hero .hero-buttons{
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+}
