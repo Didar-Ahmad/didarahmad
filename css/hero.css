@@ -12,8 +12,8 @@
 
     background:linear-gradient(
         135deg,
-        #F8FAFC 0%,
-        #EEF4FF 100%
+        #768ca1 0%,
+        #bec0c4 100%
     );
 
     padding:140px 0 80px;
@@ -174,7 +174,7 @@
 
     color:var(--primary);
 
-    background:#ffffff;
+    background:#a6b7cc;
 
     font-size:16px;
 
@@ -188,7 +188,7 @@
 
     background:var(--primary);
 
-    color:#ffffff;
+    box-shadow:0 25px 50px rgba(37,99,235,.40);
 
     transform:translateY(-5px);
 

@@ -19,9 +19,9 @@
 :root{
 
     --primary:#111111;
-    --secondary:#666666;
+    --secondary:#272626;
     --accent:#0066ff;
-    --white:#ffffff;
+    --white:#c2cbdd;;
     --light:#f8f9fa;
 
     --shadow:0 10px 30px rgba(0,0,0,.08);
