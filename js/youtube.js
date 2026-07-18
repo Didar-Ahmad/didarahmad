@@ -15,8 +15,12 @@
       const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=channel&q=${q}&key=${apiKey}&maxResults=1`;
       const res = await fetch(searchUrl);
       const data = await res.json();
+      if(data.error){
+        console.warn('YouTube API search error for',handle,data.error);
+        return null;
+      }
       return data.items?.[0]?.snippet?.channelId || data.items?.[0]?.id?.channelId || null;
-    }catch(e){return null}
+    }catch(e){console.warn('YouTube search failed for',handle,e);return null}
   }
 
   async function fetchChannelThumbnail(channelId){
@@ -26,33 +30,73 @@
       const url = `https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${channelId}&key=${apiKey}`;
       const res = await fetch(url);
       const data = await res.json();
+      if(data.error){
+        console.warn('YouTube channels API error for',channelId,data.error);
+        return null;
+      }
       const thumb = data.items?.[0]?.snippet?.thumbnails;
       return thumb?.medium?.url || thumb?.default?.url || thumb?.high?.url || null;
-    }catch(e){return null}
+    }catch(e){console.warn('Fetching channel thumbnail failed',e);return null}
+  }
+
+  function makeInitialsPlaceholder(handle,size=48){
+    const initial = (handle||'?').charAt(0).toUpperCase();
+    const bg = '#e6e6e6';
+    const fg = '#333';
+    const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='${size}' height='${size}'><rect width='100%' height='100%' fill='${bg}' rx='${size/2}' ry='${size/2}'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial,Helvetica,sans-serif' font-size='${Math.round(size*0.5)}' fill='${fg}'>${initial}</text></svg>`;
+    return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
   }
 
   async function addChannelAvatars(){
     const apiKey = cfg.apiKey;
-    if(!apiKey) return;
     const anchors = Array.from(document.querySelectorAll('a[href*="youtube.com/@"]'));
     await Promise.all(anchors.map(async a=>{
       try{
         const m = a.href.match(/@([^/?#]+)/);
         if(!m) return;
         const handle = m[1];
-        const channelId = await fetchChannelIdForHandle(handle);
-        if(!channelId) return;
-        const thumb = await fetchChannelThumbnail(channelId);
-        if(!thumb) return;
-        if(a.querySelector('.yt-avatar')) return;
-        const img = document.createElement('img');
-        img.src = thumb;
-        img.alt = `${handle} avatar`;
-        img.className = 'yt-avatar';
-        img.width = 48;
-        img.height = 48;
-        a.prepend(img);
-      }catch(e){/* ignore */}
+        if(a.querySelector('.yt-avatar') || a.querySelector('.yt-avatar-fallback')) return;
+
+        let imgSrc = null;
+        if(apiKey){
+          const channelId = await fetchChannelIdForHandle(handle);
+          if(channelId){
+            const thumb = await fetchChannelThumbnail(channelId);
+            if(thumb) imgSrc = thumb;
+            else console.warn('No thumbnail found for channel',channelId,handle);
+          }else{
+            console.warn('Channel ID not found for handle',handle);
+          }
+        } else {
+          console.warn('No YouTube API key configured; using placeholder for',handle);
+        }
+
+        if(imgSrc){
+          const img = document.createElement('img');
+          img.src = imgSrc;
+          img.alt = `${handle} avatar`;
+          img.className = 'yt-avatar';
+          img.width = 48; img.height = 48;
+          a.prepend(img);
+        } else {
+          // fallback: initials SVG
+          const span = document.createElement('span');
+          span.className = 'yt-avatar-fallback';
+          span.style.display = 'inline-block';
+          span.style.width = '48px';
+          span.style.height = '48px';
+          span.style.borderRadius = '50%';
+          span.style.overflow = 'hidden';
+          span.style.marginRight = '12px';
+          const img = document.createElement('img');
+          img.src = makeInitialsPlaceholder(handle,48);
+          img.alt = `${handle} avatar`;
+          img.style.width = '48px'; img.style.height = '48px'; img.style.display='block';
+          img.style.borderRadius='50%';
+          span.appendChild(img);
+          a.prepend(span);
+        }
+      }catch(e){console.warn('addChannelAvatars error',e)}
     }));
   }
 
@@ -66,6 +110,7 @@
         const url = `https://www.googleapis.com/youtube/v3/search?key=${cfg.apiKey}&channelId=${channelId}&part=snippet,id&order=date&type=video&maxResults=3`;
         const res = await fetch(url);
         const data = await res.json();
+        if(data.error){console.warn('YouTube search list error',data.error); return []}
         return data.items || [];
       }));
       const videos = results.flat().sort((a,b)=>new Date(b.snippet.publishedAt)-new Date(a.snippet.publishedAt)).slice(0,6);
