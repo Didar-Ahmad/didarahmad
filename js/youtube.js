@@ -49,13 +49,15 @@
 
   async function addChannelAvatars(){
     const apiKey = cfg.apiKey;
-    const anchors = Array.from(document.querySelectorAll('a[href*="youtube.com/@"]'));
+    // Only target the small channel links in the profile area (avoid cards)
+    const anchors = Array.from(document.querySelectorAll('.channel-profile a[href*="youtube.com/@"]'));
     await Promise.all(anchors.map(async a=>{
       try{
+        // don't add if an avatar already exists in the link
+        if(a.querySelector('.yt-avatar') || a.querySelector('.yt-avatar-fallback')) return;
         const m = a.href.match(/@([^/?#]+)/);
         if(!m) return;
         const handle = m[1];
-        if(a.querySelector('.yt-avatar') || a.querySelector('.yt-avatar-fallback')) return;
 
         let imgSrc = null;
         if(apiKey){
