@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Didar Ahmad — modeling, videos, and writing.">
+  <title>Didar Ahmad — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="nav wrap">
+      <a class="brand" href="#top" aria-label="Didar Ahmad home">DA<span>///</span></a>
+      <button class="menu-button" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
+      <div class="links">
+        <a href="#youtube">YouTube</a>
+        <a href="#modeling">Modeling</a>
+        <a href="#writing">Blog</a>
+        <a class="contact-link" href="mailto:info@didarahmad.com">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap">
+      <p class="eyebrow">Creative portfolio</p>
+      <h1>Stories in<br><em>motion.</em></h1>
+      <p class="intro">A personal collection of videos, modeling work, and notes from behind the scenes.</p>
+      <a class="button" href="#modeling">Explore the portfolio <span>↓</span></a>
+    </section>
+
+    <section id="youtube" class="section dark">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="eyebrow">01 / Video</p><h2>Latest from<br>YouTube.</h2></div>
+          <a class="text-link" id="youtube-channel-link" href="https://youtube.com" target="_blank" rel="noopener">Visit channel ↗</a>
+        </div>
+        <div id="youtube-grid" class="video-grid" aria-live="polite"><p class="loading">Loading latest videos…</p></div>
+      </div>
+    </section>
+
+    <section id="modeling" class="section wrap">
+      <div class="section-head"><div><p class="eyebrow">02 / Modeling</p><h2>Selected<br>frames.</h2></div><p class="side-copy">Editorial portraits, creative collaborations and moments from the journey.</p></div>
+      <div class="gallery">
+        <figure class="gallery-feature"><img src="images/modeling-01.jpg" alt="Didar Ahmad modeling portrait"><figcaption>Editorial portrait</figcaption></figure>
+        <figure><img src="images/modeling-02.jpg" alt="Didar Ahmad modeling portfolio"><figcaption>Studio session</figcaption></figure>
+        <figure><img src="images/modeling-03.jpg" alt="Didar Ahmad creative collaboration"><figcaption>Creative collaboration</figcaption></figure>
+        <figure><img src="images/modeling-04.jpg" alt="Didar Ahmad fashion portrait"><figcaption>Fashion story</figcaption></figure>
+      </div>
+      <p class="asset-note">Add your own images to <code>images/</code> using the filenames above.</p>
+    </section>
+
+    <section id="writing" class="section pale">
+      <div class="wrap">
+        <div class="section-head"><div><p class="eyebrow">03 / Writing</p><h2>From the<br>journal.</h2></div><p class="side-copy">Short notes on creativity, travel and building a life around meaningful work.</p></div>
+        <div id="post-grid" class="post-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer wrap"><span>© <span id="year"></span> Didar Ahmad</span><a href="#top">Back to top ↑</a></footer>
+  <script src="app.js"></script>
+</body>
+</html>
